@@ -9,5 +9,5 @@ function change() {
 }
 
 function changeColor(){
-    let color = document.getElementById("mouseOver").style.backgroundColor = "red"
+    document.getElementById("nameInput").style.backgroundColor = "red";
 }

@@ -1,27 +1,23 @@
-// let inputMessage = "Hey friend"
-// let bopTalk = "op"
-
-// let vowels = "aeiou"
-// let letter = "i"
-
-// if (vowels.includes(letter)) {
-//     console.log("vowel");
-// } else {
-//     console.log("constanant");
-// }
 console.log(bobTalk("Hi my name is crissy"));
 
 function bobTalk(str) {
     let vowels = ['a', 'e', 'i', 'o', 'u'];
     let newStr = "";
 
-    if (vowels.indexOf(str[0]) > -1) {
-        newStr = str + "op";
-        return newStr;
-    } else {
-        let firstMatch = str.match(/[aeiou]/g) || 0;
-        let vowel = str.indexOf(firstMatch[0]);
-        newStr = str.substring(vowel) + str.substring(0, vowel) + "op";
-        return newStr;
+    for (let i = 0; i < str.length; i++) {
+        //str[i]
+        if (vowels.indexOf(str[i]) > -1) { // found a vowel
+            newStr = str + "op";
+            // console.log(i);
+            // console.log(newStr);
+            //return newStr;
+        } else { // did not find a vowel
+            newStr = str.substring(vowels) + str.substring(0, vowels) + "op";
+            //return newStr;
+        }
     }
 }
+
+// newStr -> "" -> "hop i mop yop nop..."
+console.log(newStr)
+return newStr;

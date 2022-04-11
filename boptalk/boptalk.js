@@ -1,23 +1,19 @@
-console.log(bobTalk("Hi my name is crissy"));
+// array of vowles
+let vowels= ['a','e' , 'i' , 'o' , 'u'];
+// splitting message into array of characters
+let message='My name is Crissy'.split('')
+// declare a varible to hold the output message due to the new line console log
+let output = ''
+// loop through each character in the message array
+for (let index = 0; index < message.length; ++index) {
+  const element = message[index];
+  // check if charcater is vowel or space
+  if (vowels.includes(element) || element ==' '){
+    output += element + ' '
+    } else {
+      output += element + 'op' + ' '
+  }
 
-function bobTalk(str) {
-    let vowels = ['a', 'e', 'i', 'o', 'u'];
-    let newStr = "";
-
-    for (let i = 0; i < str.length; i++) {
-        //str[i]
-        if (vowels.indexOf(str[i]) > -1) { // found a vowel
-            newStr = str + "op";
-            // console.log(i);
-            // console.log(newStr);
-            //return newStr;
-        } else { // did not find a vowel
-            newStr = str.substring(vowels) + str.substring(0, vowels) + "op";
-            //return newStr;
-        }
-    }
 }
-
-// newStr -> "" -> "hop i mop yop nop..."
-console.log(newStr)
-return newStr;
+// output to console
+console.log (output)

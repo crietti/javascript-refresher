@@ -1,11 +1,11 @@
-let player0 = {}
-let player1 = {}
-let player2 = {}
-let player3 = {}
+let player0 = {currentScore: 0, totalScore: 0};
+let player1 = {currentScore: 0, totalScore: 0};
+let player2 = {currentScore: 0, totalScore: 0};
+let player3 = {currentScore: 0, totalScore: 0};
 let players = [player0, player1, player2, player3];
 let winScore = 50;
 
-setUpGame()
+setUp()
 
 let currentPlayer = 0;
 
@@ -56,7 +56,7 @@ function handleRoll() {
     let pig1 = rollPig(); //rolling 0-1
     let pig2 = rollPig();
     let roll = scorePigs(pig1, pig2);// score of whatever pig 1 and pig 2 is
-    document.getElementById('player' + currentPlayer + 'Pig1').innerHTML = pig1; // setting payers pig to whatever number was roll
+    document.getElementById('player' + currentPlayer + 'Pig1').innerHTML = pig1; // setting players pig to whatever number was roll
     document.getElementById('player' + currentPlayer + 'Pig2').innerHTML = pig2;
     if (roll == 0) {
         pigOut();
@@ -180,7 +180,7 @@ function changeBackground() {
     document.getElementById("player" + currentPlayer).className = "w3-card w3-container w3-dark-gray w3-round-large";
 }
 
-function setUpGame() {
+function setUp() {
     disableB();
     document.getElementById("player" + currentPlayer + "PassButton").disabled = false;
     document.getElementById("player" + currentPlayer + "RollButton").disabled = false;
